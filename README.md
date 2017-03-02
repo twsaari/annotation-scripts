@@ -11,7 +11,7 @@ multithread_exonerate_afterblast.pl | Asynchronous version of exonerate_afterbla
 \*.config files | Configuration files supplied to exonerate_afterblast programs, can be customized for different datasets
 simple_exonerate2gff3.pl | easy method for converting exonerate output (with GFF output enabled) to GFF3 format
 FilterGff.pl | Filter GFF3 entries using customized criteria
-bestOfGFF.pl | Select best of GFF3 entries from a particular query sequence
+bestOfGFF.pl | Select best of GFF3 entries for a particular query sequence
 add_tags.R | use BiomaRt to add gene symbols and descriptions to GFF3 files
 
 
@@ -21,6 +21,7 @@ The entire process is outlined for the alignment of fathead minnow (*Pimephales 
 ### Retrieving sequences
 
 The SOAPdenovo assembly was downloaded from NCBI's FTP site and decompressed:
+
     #Create directory for analysis and cd into it
     mkdir ~/FHM_Genome
     cd ~/FHM_Genome/
@@ -74,7 +75,7 @@ The resulting GFF3 file contained many rows of redundant information, and so the
 
      awk '($3=="gene"||$3=="exon")' ~/FHM_Genome/ESTs_best.gff3 > ESTs_best-min.gff3
 
-Now we have created a gff3 file which describes the highest-scoring alignments between the EST query sequences and the fathead minnow SOAPdenovo genome assembly. This file can be viewed in a genome browser or it can be used to simply move this information into other bioinformatic analyses. 
+Now we have created a gff3 file which describes the highest-scoring alignments between the EST query sequences and the fathead minnow SOAPdenovo genome assembly. This file can be viewed in a genome browser or it can be used to simply move this information into other bioinformatic analyses.
 
 [1]: https://www.ncbi.nlm.nih.gov/pubmed/26513338
 [2]: http://www.perlmonks.org/?node_id=767502
