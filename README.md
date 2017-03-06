@@ -73,7 +73,7 @@ Next, all aligment entries except the highest-scoring for each query were remove
 
 The resulting GFF3 file contained many rows of redundant information, and so the result was simplified to contain only the informative 'gene' or 'exon' type entries
 
-     awk '($3=="gene"||$3=="exon")' ~/FHM_Genome/ESTs_best.gff3 > ESTs_best-min.gff3
+     awk '($3=="gene"||$3=="exon"||$0=="###")' ~/FHM_Genome/ESTs_best.gff3 > ESTs_best-min.gff3
 
 Now we have created a gff3 file which describes the highest-scoring alignments between the EST query sequences and the fathead minnow SOAPdenovo genome assembly. This file can be viewed in a genome browser or it can be used to simply move this information into other bioinformatic analyses.
 
